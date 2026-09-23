@@ -1,0 +1,148 @@
+/* ═══════════════════════════════════════════
+   FileExplorer — Tree view & dialogs
+   ═══════════════════════════════════════════ */
+
+.file-explorer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.file-explorer-header {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.file-tree {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 0;
+}
+
+.file-tree-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 14px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-radius: 0;
+  transition: all var(--transition-fast);
+  border-left: 2px solid transparent;
+}
+
+.file-tree-item:hover {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-left-color: var(--accent);
+}
+
+.file-tree-item.active {
+  background: rgba(88, 166, 255, 0.08);
+  color: var(--text-primary);
+  border-left-color: var(--accent);
+}
+
+.file-tree-item i {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+/* Context menu */
+.context-menu {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 180px;
+  padding: 6px;
+  backdrop-filter: blur(12px);
+}
+
+.context-menu-item {
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.context-menu-item:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.context-menu-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 6px;
+}
+
+/* Input dialog */
+.input-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+}
+
+.input-dialog {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  min-width: 340px;
+  box-shadow: var(--shadow-lg);
+}
+
+.input-dialog-title {
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.input-dialog input {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: border-color var(--transition-fast);
+}
+
+.input-dialog input:focus {
+  background: var(--bg-primary);
+  border-color: var(--accent);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  outline: none;
+}
+
+.input-dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

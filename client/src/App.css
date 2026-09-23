@@ -1,0 +1,81 @@
+/* ═══════════════════════════════════════════
+   App.css — CodeMirror & Compiler Overrides
+   ═══════════════════════════════════════════ */
+
+/* CodeMirror theme enhancements */
+.CodeMirror {
+  font-family: 'JetBrains Mono', Consolas, Monaco, monospace !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  background: var(--bg-primary) !important;
+}
+
+.CodeMirror-gutters {
+  background: var(--bg-secondary) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+.CodeMirror-linenumber {
+  color: var(--text-muted) !important;
+  font-size: 12px !important;
+}
+
+.CodeMirror-cursor {
+  border-left: 2px solid var(--accent) !important;
+}
+
+.CodeMirror-selected {
+  background: rgba(88, 166, 255, 0.15) !important;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+  background: rgba(88, 166, 255, 0.2) !important;
+}
+
+.CodeMirror-activeline-background {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Remote user selection highlighting */
+.remote-selection {
+  position: relative;
+  z-index: 1;
+}
+
+.CodeMirror-line .remote-selection {
+  background-color: inherit !important;
+}
+
+/* Compiler slide panel */
+.compile-window {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 40%;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-normal);
+  z-index: 10;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+}
+
+.slide-up {
+  transform: translateY(0);
+}
+
+.slide-down {
+  transform: translateY(100%);
+}
+
+.output-box {
+  height: 150px;
+  background-color: var(--bg-primary);
+  padding: 12px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
